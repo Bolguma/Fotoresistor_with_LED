@@ -1,0 +1,30 @@
+// C++ code
+//
+int temp1 = 0;
+
+int temp2 = 0;
+
+int temp3 = 0;
+
+int i = 0;
+
+int Iluminosidade = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(A0, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop()
+{
+  Serial.println(Iluminosidade);
+  Iluminosidade = analogRead(A0);
+  if (Iluminosidade < 750) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  delay(10); // Delay a little bit to improve simulation performance
+}
